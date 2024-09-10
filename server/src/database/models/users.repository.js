@@ -5,8 +5,8 @@ export class UsersRepository extends AbstractRepository {
         super('USERS', pool);
     }
 
-    async findByEmail(email) {
-        const [rows] = await this.pool.query(`SELECT * FROM ${this.tableName} WHERE email = ?`, [email]);
+    async findByUsername(username) {
+        const [rows] = await this.pool.query(`SELECT * FROM ${this.tableName} WHERE username = ?`, [username]);
         return rows[0];
     }
 }
